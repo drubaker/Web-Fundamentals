@@ -3,8 +3,8 @@ var guesses = document.querySelector('.guesses');
 var lastResult = document.querySelector('.lastResult');
 var lowOrHi = document.querySelector('.lowOrHi');
 
-var guessSubmit = document.querySelector('guessSubmit');
-var guessField = document.querySelector('guessField');
+var guessSubmit = document.querySelector('.guessSubmit');
+var guessField = document.querySelector('.guessField');
 
 var guessCount = 1;
 var resetButton;
@@ -15,6 +15,7 @@ function checkGuess(){
 		guesses.textContent = 'Previous guesses:';
 	}
 	guesses.textContent +=userGuess+' ' ;
+	}
 	
 	if (userGuess === randomNumber){
 		lastResult.textContent = 'Congratulations! You got it right!';
@@ -27,7 +28,7 @@ function checkGuess(){
 	} else {
 		lastResult.textContent = 'Wrong!';
 		lastResult.style.backgroundColor 'red';
-		if(userGuess<randomNumber){
+		if(userGuess < randomNumber){
 			lowOrHi.textContent = 'Last guess was too low!';
 		} else if(userGuess > randomNumber){
 			lowOrHi.textContent = 'Last guess was too high!';
@@ -56,7 +57,8 @@ function checkGuess(){
 			for (var i = 0; i < resetParas.length; i++) {
 				resetParas[i].textContent = ";
 			} resetButton.parentNode.removeChild(resetButton); guessField.disabled = false;
-			guessSubmit.value = ";
+			guessSubmit.disabled = false;
+			guessField.value = ";
 			guessField.focus(); lastResult.style.backgroundColor = 'white'; ramdonNumber = 
 			Math.floor(Math.random() * 100) + 1;
 		}
